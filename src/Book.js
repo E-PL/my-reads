@@ -28,7 +28,7 @@ class Book extends React.Component {
    */
   componentDidMount = () => {
     const thumbnail = this.props.data.imageLinks
-      ? this.props.data.imageLinks.thumbnail
+      ? this.props.data.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://')
       : DefaultImage;
     this.setState({ thumbnail: thumbnail });
   };
@@ -44,7 +44,7 @@ class Book extends React.Component {
       return;
     }
     const thumbnail = this.props.data.imageLinks
-      ? this.props.data.imageLinks.thumbnail
+      ? this.props.data.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://')
       : DefaultImage;
     this.setState({ thumbnail: thumbnail });
   };
